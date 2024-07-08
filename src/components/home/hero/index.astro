@@ -1,3 +1,27 @@
-<section>
+---
 
+// IMPORT ASTRO ATOMS
+import ButtonYellow from "@/atoms/atoms-nandini/buttons/yellow/index.astro"
+import HeadingOne from "@/atoms/atoms-nandini/headings/one/index.astro"
+
+// GET ASTRO PROPS
+const {
+
+    button_text,
+    title,
+
+} = Astro.props
+
+---
+<section class="relative flex">
+        <video autoplay loop muted >
+            <source 
+                src="/video.mp4"
+                type="video/mp4"
+            />
+        </video>
+        <div class="absolute top-20 md:top-48 pl-6 md:pl-0 space-y-6">
+            <HeadingOne>{ title }</HeadingOne>
+            <ButtonYellow>{ button_text }</ButtonYellow>
+        </div>
 </section>
