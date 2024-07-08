@@ -7,6 +7,7 @@ import Container from "@/layouts/container/index.astro"
 import Headingtwo from "@/atoms/atoms-shiva/headings/two/index.astro"
 import Headingfour from "@/atoms/atoms-shiva/headings/four/index.astro"
 import ParagraphSmallCenter from "@/atoms/atoms-shiva/paragraphs/sm/center/index.astro"
+import Picture from "@/atoms/atoms-shiva/picture/index.astro"
 
 // IMPORT ASTRO COMPONENTS
 import ContactInfo from "@/components/common/footer/contact-info/index.astro"
@@ -50,24 +51,21 @@ const data = {
                     </div>
                     <div class="flex gap-6 my-8 justify-center md:justify-start">
                         <a href="">
-                            <img
-                                alt=""
-                                src="/icons/icon-instagram.svg"
-                                class="h-5"
+                            <Picture
+                                alternative_text="instagram"
+                                source="/icons/icon-instagram.svg"
                             />
                         </a>
                         <a href="">
-                            <img
-                                alt=""
-                                src="/icons/icon-linkedin.svg"
-                                class="h-5"
+                            <Picture
+                                alternative_text="linkedin"
+                                source="/icons/icon-linkedin.svg"
                             />
                         </a>
                         <a href="">
-                            <img
-                                alt=""
-                                src="/icons/icon-youtube.svg"
-                                class="h-5"
+                            <Picture
+                                alternative_text="youtube"
+                                source="/icons/icon-youtube.svg"
                             />
                         </a>
                     </div>
