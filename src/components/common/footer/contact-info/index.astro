@@ -1,0 +1,24 @@
+---
+
+// IMPORT ASTRO ATOMS
+import ParagraphLgGray from "@/atoms/atoms-shiva/paragraphs/lg/gray/index.astro"
+import ParagraphLgGrayMedium from "@/atoms/atoms-shiva/paragraphs/lg/gray/font-medium/index.astro"
+
+// GET ASTRO PROPS
+const {
+
+    title,
+    description,
+
+} = Astro.props
+
+---
+
+<div class="w-full grid grid-cols-3">
+    <div class="">
+        <ParagraphLgGrayMedium>{ title }</ParagraphLgGrayMedium>
+    </div>
+    <div class="col-span-2">
+        <ParagraphLgGray>{ description }</ParagraphLgGray>
+    </div>
+</div>
