@@ -1,0 +1,32 @@
+---
+
+// IMPORT ASTRO COMPONENTS
+import Input from "@/components/common/footer/form/input/index.astro"
+
+// IMPORT ASTRO ATOMS
+import DarkButton from "@/atoms/atoms-shiva/button/dark-button/index.astro"
+
+// HARDCODED DATA
+const data = {
+
+    button_text: "SUBMIT",
+
+}
+
+---
+
+<form class="flex flex-col gap-4">
+    <div class="flex gap-2">
+        <Input
+            placeholder="First Name"
+        />
+        <Input
+            placeholder="Last Name"
+        />
+    </div>
+    <Input
+        placeholder="Email Address"
+    />
+    <textarea class="w-full border border-gray-400 resize-none p-2 bg-transparent focus:outline-none" placeholder="Your Message" rows="3"></textarea>
+    <DarkButton>{ data.button_text }</DarkButton>
+</form>
