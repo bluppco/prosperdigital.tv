@@ -3,9 +3,98 @@
 // IMPORT ASTRO LAYOUTS
 import Container from "@/layouts/container/index.astro"
 
+// IMPORT ASTRO ATOMS
+import Headingtwo from "@/atoms/atoms-shiva/headings/two/index.astro"
+import Headingfour from "@/atoms/atoms-shiva/headings/four/index.astro"
+import ParagraphSmallCenter from "@/atoms/atoms-shiva/paragraphs/sm/center/index.astro"
+
+// IMPORT ASTRO COMPONENTS
+import ContactInfo from "@/components/common/footer/contact-info/index.astro"
+import Form from "@/components/common/footer/form/index.astro"
+
+// HARDCODED DATA
+const data = {
+
+    copyright: "© 2024 Prosper Digital TV | Privacy Policy",
+    title: "Get In Touch",
+    sub_title_one: "OFFICE",
+    sub_title_two: "LOCATION",
+    sub_title_three: "LET'S TELL YOUR STORY",
+
+}
+
 ---
-<footer class="bg-black py-20">
+
+<footer class="my-14">
     <Container>
-        <p class="text-white">I am footer</p>
+        <div class="flex flex-col gap-10 max-w-[1280px] mx-auto">
+            <div>
+                <Headingtwo>{ data.title }</Headingtwo>
+            </div>
+            <div class="flex flex-col gap-6 md:gap-0 lg:gap-20 md:flex-row md:flex-wrap md:justify-between lg:flex-nowrap">
+                <div class="flex flex-col gap-2 md:w-1/2 lg:w-auto">
+                    <Headingfour>{ data.sub_title_one }</Headingfour>
+                    <div class="flex flex-col gap-6">
+                        <ContactInfo
+                            description="67 35th Street. Suite B523. Brooklyn, NY 11232"
+                            title="ADDRESS"
+                        />
+                        <ContactInfo
+                            description="(718) 622-0062"
+                            title="PHONE"
+                        />
+                        <ContactInfo
+                            description="Monday - Friday 9:00am - 5:00pm"
+                            title="HOURS"
+                        />
+                    </div>
+                    <div class="flex gap-6 my-8 justify-center md:justify-start">
+                        <a href="">
+                            <img
+                                alt=""
+                                src="/icons/icon-instagram.svg"
+                                class="h-5"
+                            />
+                        </a>
+                        <a href="">
+                            <img
+                                alt=""
+                                src="/icons/icon-linkedin.svg"
+                                class="h-5"
+                            />
+                        </a>
+                        <a href="">
+                            <img
+                                alt=""
+                                src="/icons/icon-youtube.svg"
+                                class="h-5"
+                            />
+                        </a>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-2 md:w-1/2">
+                    <Headingfour>{ data.sub_title_two }</Headingfour>
+                    <div class="min-h-[200px] w-full h-full">
+                        <iframe 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade"
+                            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d48428.46673643541!2d-74.00673!3d40.656798!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25b983e86dc97%3A0xc6cd2907256110fd!2sProsper%20Digital%20TV!5e0!3m2!1sen!2sin!4v1720420060962!5m2!1sen!2sin" 
+                            style="border:0; width:100%; height:100%"
+                        >
+                        </iframe>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-2 md:w-full lg:w-auto">
+                    <Headingfour>{ data.sub_title_three }</Headingfour>
+                    <div>
+                        <Form/>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <ParagraphSmallCenter>{ data.copyright }</ParagraphSmallCenter>
+            </div>
+        </div>
     </Container>
 </footer>
