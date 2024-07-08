@@ -1,0 +1,16 @@
+---
+
+// IMPORT REACTIVE COMPONENT 
+import ScrollHeader from "@/components/common/header/index"
+
+// IMPORT COLLECTIONS
+import { getCollection } from "astro:content";
+let header_list = await getCollection("header")
+header_list = header_list.sort((a, b) => a.data.order - b.data.order)
+
+---
+
+<header>
+    <!-- <Header1 header_list = { header_list } /> -->
+    <ScrollHeader header_list={ header_list } />
+</header>
