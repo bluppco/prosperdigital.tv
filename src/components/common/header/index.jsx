@@ -1,15 +1,14 @@
-import Header1 from "@/components/common/header/structure/header-1/index";
-import Header2 from "@/components/common/header/structure/header-2/index";
+import { useState } from "react";
+import Header1 from "@/components/common/header/structure/header-1/index.astro";
+import Header2 from "@/components/common/header/structure/header-2/index.astro";
+import { useState } from "react";
 
-const ScrollHeader = ({ header_list }) => {
+const ScrollHeader = () => {
 	// This file is for detecting scroll and changing header according to scroll
 
-	return (
-		<div className="m-0">
-			<Header2 header_list={header_list} />
-			<Header1 header_list={header_list} />
-		</div>
-	);
+	const [scrolled, setScrolled] = useState(0);
+
+	return <div>{scrolled ? <Header2 /> : <Header1 />}</div>;
 };
 
 export default ScrollHeader;

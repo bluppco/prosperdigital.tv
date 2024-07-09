@@ -34,7 +34,6 @@ module.exports = {
 			colors: {
 				"gold-hover": "#AF793D",
 				bluish_text: "#5A67A6",
-				"blue-gradient": "linear-gradient(to right, #5A67A6, #AF793D)",
 			},
 			fontFamily: {},
 			backgroundImage: {
