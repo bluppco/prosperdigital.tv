@@ -9,11 +9,3 @@
 
 - gradient : py-4, h-14, w-64, bg-gradient-to-r from-indigo-500 to-yellow-600, hover:from-yellow-600, hover:to-yellow-600, text-white, text-base, font-medium
 - yellow : border, py-1.5, px-8, font-bold, tracking-widest, hover:bg-yellow-600, hover:border-none, text-white
-
-### Colors
-
-from-indigo-500 : "#3F51B5"
-to-yellow-600 : "#FDD835"
-hover:from-yellow-600 : "#FDD835"
-hover:to-yellow-600 : "#FDD835"
-text-white : "#FFFFFF"

@@ -46,11 +46,11 @@ module.exports = {
 
 			},
 			colors: {
-				"from-indigo-500" : "#3F51B5",
-				"to-yellow-600" : "#FDD835",
-				"hover:from-yellow-600" : "#FDD835",
-				"hover:to-yellow-600" : "#FDD835",
-				"text-white" : "#FFFFFF",
+				"from-indigo-500",
+				"to-yellow-600",
+				"hover:from-yellow-600",
+				"hover:to-yellow-600",
+				"text-white",
 
 			},
 			fontFamily: {
