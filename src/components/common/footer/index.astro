@@ -1,5 +1,12 @@
 ---
 
+// IMPORT ASTRO COLLECTION
+import { getCollection } from "astro:content"
+
+// IMPORT FOOTER COLLECTION
+let footer_data = await getCollection("footer")
+const officeContent = footer_data.find(doc => doc.slug === 'office');
+
 // IMPORT ASTRO LAYOUTS
 import Container from "@/layouts/container/index.astro"
 
@@ -8,37 +15,19 @@ import ContactInfo from "@/components/common/footer/contact-info/index.astro"
 import Form from "@/components/common/footer/form/index.astro"
 
 // IMPORT ASTRO ATOMS
-import HeadingTwoFourXlCenter from "@/atoms/atoms-shiva/headings/two/four-xl/bold/center/index.astro"
 import HeadingFourLg from "@/atoms/atoms-shiva/headings/four/lg/bold/index.astro"
+import HeadingTwoFourXlCenter from "@/atoms/atoms-shiva/headings/two/four-xl/bold/center/index.astro"
 import ParagraphSmallCenter from "@/atoms/atoms-shiva/paragraphs/sm/center/index.astro"
 import Picture from "@/atoms/atoms-shiva/picture/index.astro"
 
 // HARDCODED DATA
 const data = {
 
-    copyright: "© 2024 Prosper Digital TV | Privacy Policy",
+    section_three: "LET'S TELL YOUR STORY",
+    section_two: "LOCATION",
     title: "Get In Touch",
-    sub_title_one: "OFFICE",
-    sub_title_two: "LOCATION",
-    sub_title_three: "LET'S TELL YOUR STORY",
 
 }
-const contact_data = [
-
-    {
-        description:"67 35th Street. Suite B523. Brooklyn, NY 11232",
-        title:"ADDRESS"
-    },
-    {
-        description:"(718) 622-0062",
-        title:"PHONE"
-    },
-    {
-        description:"Monday - Friday 9:00am - 5:00pm",
-        title:"HOURS"
-    },
-
-]
 const socials = [
 
     {
@@ -67,12 +56,12 @@ const socials = [
             <HeadingTwoFourXlCenter>{ data.title }</HeadingTwoFourXlCenter>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10 justify-between">
                 <div class="flex flex-col gap-2 w-full">
-                    <HeadingFourLg>{ data.sub_title_one }</HeadingFourLg>
+                    <HeadingFourLg>{ officeContent.data.title}</HeadingFourLg>
                     <div class="flex flex-col gap-6">
-                        {contact_data.map((data) => (
+                        {officeContent.data.items.map((item) => (
                             <ContactInfo
-                                description={ data.description }
-                                title={ data.title }
+                                description={ item.sub_title }
+                                title={ item.title }
                             />
                         ))}
                     </div>
@@ -88,7 +77,7 @@ const socials = [
                     </div>
                 </div>
                 <div class="flex flex-col gap-2 w-full">
-                    <HeadingFourLg>{ data.sub_title_two }</HeadingFourLg>
+                    <HeadingFourLg>{ data.section_two }</HeadingFourLg>
                     <div class="min-h-[200px] w-full h-full">
                         <iframe 
                             allowfullscreen="" 
@@ -101,11 +90,11 @@ const socials = [
                     </div>
                 </div>
                 <div class="flex flex-col gap-2 sm:col-span-2 lg:col-span-1">
-                    <HeadingFourLg>{ data.sub_title_three }</HeadingFourLg>
+                    <HeadingFourLg>{ data.section_three }</HeadingFourLg>
                     <Form/>
                 </div>
             </div>
-            <ParagraphSmallCenter>{ data.copyright }</ParagraphSmallCenter>
+            <ParagraphSmallCenter>{ officeContent.data.bottom }</ParagraphSmallCenter>
         </div>
     </Container>
 </footer>
