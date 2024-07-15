@@ -1,8 +1,8 @@
 ---
 
 // IMPORT ASTRO ATOMS
-import ButtonYellow from "@/atoms/atoms-nandini/buttons/yellow/index.astro"
-import HeadingOne from "@/atoms/atoms-nandini/headings/one/index.astro"
+import ButtonYellow from "@/atoms/atoms-nandini/buttons/bold/yellow/index.astro"
+import HeadingOne4xlBold from "@/atoms/atoms-nandini/headings/one/4xl/bold/index.astro"
 
 // GET ASTRO PROPS
 const {
@@ -20,8 +20,8 @@ const {
                 type="video/mp4"
             />
         </video>
-        <div class="absolute top-20 md:top-48 pl-6 md:pl-0 space-y-6">
-            <HeadingOne>{ title }</HeadingOne>
+        <div class="absolute items-center top-20 sm:top-36 md:top-48 pl-6 sm:pl-0 lg:top-60 xl:top-80 xl:pl-20 2xl:top-96 2xl:pl-60 space-y-6">
+            <HeadingOne4xlBold>{ title }</HeadingOne4xlBold>
             <ButtonYellow>{ button_text }</ButtonYellow>
         </div>
 </section>
