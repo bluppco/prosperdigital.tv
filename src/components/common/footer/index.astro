@@ -3,15 +3,15 @@
 // IMPORT ASTRO LAYOUTS
 import Container from "@/layouts/container/index.astro"
 
-// IMPORT ASTRO ATOMS
-import Headingtwo from "@/atoms/atoms-shiva/headings/two/index.astro"
-import Headingfour from "@/atoms/atoms-shiva/headings/four/index.astro"
-import ParagraphSmallCenter from "@/atoms/atoms-shiva/paragraphs/sm/center/index.astro"
-import Picture from "@/atoms/atoms-shiva/picture/index.astro"
-
 // IMPORT ASTRO COMPONENTS
 import ContactInfo from "@/components/common/footer/contact-info/index.astro"
 import Form from "@/components/common/footer/form/index.astro"
+
+// IMPORT ASTRO ATOMS
+import HeadingTwoFourXlCenter from "@/atoms/atoms-shiva/headings/two/four-xl/bold/center/index.astro"
+import HeadingFourLg from "@/atoms/atoms-shiva/headings/four/lg/bold/index.astro"
+import ParagraphSmallCenter from "@/atoms/atoms-shiva/paragraphs/sm/center/index.astro"
+import Picture from "@/atoms/atoms-shiva/picture/index.astro"
 
 // HARDCODED DATA
 const data = {
@@ -23,55 +23,72 @@ const data = {
     sub_title_three: "LET'S TELL YOUR STORY",
 
 }
+const contact_data = [
+
+    {
+        description:"67 35th Street. Suite B523. Brooklyn, NY 11232",
+        title:"ADDRESS"
+    },
+    {
+        description:"(718) 622-0062",
+        title:"PHONE"
+    },
+    {
+        description:"Monday - Friday 9:00am - 5:00pm",
+        title:"HOURS"
+    },
+
+]
+const socials = [
+
+    {
+        alternative_text:"instagram",
+        link:"/",
+        source:"/icons/icon-instagram.svg"
+    },
+    {
+        alternative_text:"linkedin",
+        link:"/",
+        source:"/icons/icon-linkedin.svg"
+    },
+    {
+        alternative_text:"youtube",
+        link:"/",
+        source:"/icons/icon-youtube.svg"
+    },
+
+]
 
 ---
 
 <footer class="my-14">
     <Container>
-        <div class="flex flex-col gap-10 max-w-[1280px] mx-auto">
-            <div>
-                <Headingtwo>{ data.title }</Headingtwo>
-            </div>
+        <div class="flex flex-col gap-10">
+            <HeadingTwoFourXlCenter>{ data.title }</HeadingTwoFourXlCenter>
             <div class="flex flex-col gap-6 md:gap-0 lg:gap-20 md:flex-row md:flex-wrap md:justify-between lg:flex-nowrap">
                 <div class="flex flex-col gap-2 md:w-1/2 lg:w-auto">
-                    <Headingfour>{ data.sub_title_one }</Headingfour>
+                    <HeadingFourLg>{ data.sub_title_one }</HeadingFourLg>
                     <div class="flex flex-col gap-6">
-                        <ContactInfo
-                            description="67 35th Street. Suite B523. Brooklyn, NY 11232"
-                            title="ADDRESS"
-                        />
-                        <ContactInfo
-                            description="(718) 622-0062"
-                            title="PHONE"
-                        />
-                        <ContactInfo
-                            description="Monday - Friday 9:00am - 5:00pm"
-                            title="HOURS"
-                        />
+                        {contact_data.map((data) => (
+                            <ContactInfo
+                                description={ data.description }
+                                title={ data.title }
+                            />
+                        ))}
                     </div>
                     <div class="flex gap-6 my-8 justify-center md:justify-start">
-                        <a href="">
-                            <Picture
-                                alternative_text="instagram"
-                                source="/icons/icon-instagram.svg"
-                            />
-                        </a>
-                        <a href="">
-                            <Picture
-                                alternative_text="linkedin"
-                                source="/icons/icon-linkedin.svg"
-                            />
-                        </a>
-                        <a href="">
-                            <Picture
-                                alternative_text="youtube"
-                                source="/icons/icon-youtube.svg"
-                            />
-                        </a>
+                        {socials.map((data) => (
+                            <a href={ data.link }>
+                                <Picture
+                                    alternative_text={ data.alternative_text }
+                                    source={ data.source }
+                                />
+                            </a>
+                        ))}
                     </div>
                 </div>
                 <div class="flex flex-col gap-2 md:w-1/2">
-                    <Headingfour>{ data.sub_title_two }</Headingfour>
+                    <HeadingFourLg>{ data.sub_title_two }</HeadingFourLg>
                     <div class="min-h-[200px] w-full h-full">
                         <iframe 
                             allowfullscreen="" 
@@ -84,15 +101,11 @@ const data = {
                     </div>
                 </div>
                 <div class="flex flex-col gap-2 md:w-full lg:w-auto">
-                    <Headingfour>{ data.sub_title_three }</Headingfour>
-                    <div>
-                        <Form/>
-                    </div>
+                    <HeadingFourLg>{ data.sub_title_three }</HeadingFourLg>
+                    <Form/>
                 </div>
             </div>
-            <div>
-                <ParagraphSmallCenter>{ data.copyright }</ParagraphSmallCenter>
-            </div>
+            <ParagraphSmallCenter>{ data.copyright }</ParagraphSmallCenter>
         </div>
     </Container>
 </footer>
