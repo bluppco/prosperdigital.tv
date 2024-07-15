@@ -65,8 +65,8 @@ const socials = [
     <Container>
         <div class="flex flex-col gap-10">
             <HeadingTwoFourXlCenter>{ data.title }</HeadingTwoFourXlCenter>
-            <div class="flex flex-col gap-6 md:gap-0 lg:gap-20 md:flex-row md:flex-wrap md:justify-between lg:flex-nowrap">
-                <div class="flex flex-col gap-2 md:w-1/2 lg:w-auto">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10 justify-between">
+                <div class="flex flex-col gap-2 w-full">
                     <HeadingFourLg>{ data.sub_title_one }</HeadingFourLg>
                     <div class="flex flex-col gap-6">
                         {contact_data.map((data) => (
@@ -76,7 +76,7 @@ const socials = [
                             />
                         ))}
                     </div>
-                    <div class="flex gap-6 my-8 justify-center md:justify-start">
+                    <div class="flex gap-6 my-8 justify-center md:justify-start w-full">
                         {socials.map((data) => (
                             <a href={ data.link }>
                                 <Picture
@@ -87,7 +87,7 @@ const socials = [
                         ))}
                     </div>
                 </div>
-                <div class="flex flex-col gap-2 md:w-1/2">
+                <div class="flex flex-col gap-2 w-full">
                     <HeadingFourLg>{ data.sub_title_two }</HeadingFourLg>
                     <div class="min-h-[200px] w-full h-full">
                         <iframe 
@@ -100,7 +100,7 @@ const socials = [
                         </iframe>
                     </div>
                 </div>
-                <div class="flex flex-col gap-2 md:w-full lg:w-auto">
+                <div class="flex flex-col gap-2 sm:col-span-2 lg:col-span-1">
                     <HeadingFourLg>{ data.sub_title_three }</HeadingFourLg>
                     <Form/>
                 </div>
