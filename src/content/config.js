@@ -5,18 +5,34 @@ const footerCollection = defineCollection({
 	schema: z.object({
 
 		title: z.string(),
-		bottom: z.string(),
-		items: z.array(
+		bottom_title: z.string(),
 
-			z.object({
+		schema: z.object({
 
-                order: z.number(),
-                sub_title: z.string(),
-				title: z.string(),
+			title_one: z.string(),
+			title_two: z.string(),
+			title_three: z.string(),
+			contact_info: z.array(
 
-			})
+				z.object({
+					order: z.number(),
+					sub_title: z.string(),
+					title: z.string(),
+				})
 
-		).optional(),
+			).optional(),
+
+			social_links: z.array(
+
+				z.object({
+					alternative_text: z.string(),
+					link: z.string(),
+					source: z.string(),
+				})
+
+			).optional(),
+
+		}),
 
 	})
 
@@ -24,6 +40,6 @@ const footerCollection = defineCollection({
 
 export const collections = {
 
-	"footer": footerCollection
+	"footer": footerCollection,
 
 }
