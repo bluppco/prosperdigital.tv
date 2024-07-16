@@ -2,7 +2,7 @@
 
 // IMPORT ASTRO ATOMS
 import ParagraphLgGray from "@/atoms/atoms-shiva/paragraphs/lg/gray/index.astro"
-import ParagraphLgGrayMedium from "@/atoms/atoms-shiva/paragraphs/lg/gray/font-medium/index.astro"
+import ParagraphLgGrayMedium from "@/atoms/atoms-shiva/paragraphs/lg/gray/medium/index.astro"
 
 // GET ASTRO PROPS
 const {
@@ -14,7 +14,7 @@ const {
 
 ---
 
-<div class="w-full grid grid-cols-3">
+<div class="w-full grid grid-cols-3 gap-2">
     <ParagraphLgGrayMedium>{ title }</ParagraphLgGrayMedium>
     <div class="col-span-2">
         <ParagraphLgGray>{ description }</ParagraphLgGray>
