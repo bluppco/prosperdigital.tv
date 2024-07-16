@@ -1,8 +1,9 @@
 ---
 
 // IMPORT ASTRO ATOMS
-import ButtonYellow from "@/atoms/atoms-nandini/buttons/bold/yellow/index.astro"
-import HeadingOne4xlBold from "@/atoms/atoms-nandini/headings/one/4xl/bold/index.astro"
+import ButtonYellow from "@/atoms/atoms-nandini/buttons/yellow/index.astro"
+import HeadingOne4xlBold from "@/atoms/atoms-nandini/headings/one/4xl/bold/white/index.astro"
+import BGVideo from "@/atoms/atoms-nandini/videos/index.astro"
 
 // GET ASTRO PROPS
 const {
@@ -14,12 +15,7 @@ const {
 
 ---
 <section class="relative flex">
-        <video autoplay loop muted >
-            <source 
-                src="/video.mp4"
-                type="video/mp4"
-            />
-        </video>
+        <BGVideo/>
         <div class="absolute grid gap-7 items-center top-20 sm:top-36 md:top-48 pl-6 sm:pl-0 lg:top-60 xl:top-80 xl:pl-20 2xl:top-96 2xl:pl-60">
             <HeadingOne4xlBold>{ title }</HeadingOne4xlBold>
             <a href="/contact/">
