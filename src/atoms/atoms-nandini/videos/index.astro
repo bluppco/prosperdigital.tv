@@ -1,7 +1,16 @@
+---
+
+// GET ASTRO PROPS
+const {
+
+    src,
+
+} = Astro.props
+
+---
 <video autoplay loop muted >
     <source 
-        src="/video.mp4"
+        src={ src }
         type="video/mp4"
     />
-    <slot/>
 </video>
