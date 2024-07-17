@@ -12,7 +12,7 @@ module.exports = {
   	],
   	prefix: "",
   	theme: {
-
+	
 		container: {
 
 			center: true,
@@ -46,7 +46,9 @@ module.exports = {
 
 			},
 			colors: {
-				
+
+				"dark-blue": "#003048"
+
 			},
 			fontFamily: {
 
