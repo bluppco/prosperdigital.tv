@@ -1,6 +1,5 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-
 	darkMode: ["class"],
   	content: [
 
@@ -14,50 +13,39 @@ module.exports = {
   	theme: {
 	
 		container: {
-
 			center: true,
-      		padding: "2rem",
-      		screens: {
-        		"2xl": "1400px",
-      		},
-
+			padding: "2rem",
+			screens: {
+				"2xl": "1400px",
+			},
 		},
-    	extend: {
-
+		extend: {
 			keyframes: {
-
 				"accordion-down": {
-
 					from: { height: "0" },
-          			to: { height: "var(--radix-accordion-content-height)" },
-
+					to: { height: "var(--radix-accordion-content-height)" },
 				},
-        		"accordion-up": {
-
+				"accordion-up": {
 					from: { height: "var(--radix-accordion-content-height)" },
-          			to: { height: "0" },
-
+					to: { height: "0" },
 				},
-      		},
-      		animation: {
-
+			},
+			animation: {
 				"accordion-down": "accordion-down 0.2s ease-out",
-        		"accordion-up": "accordion-up 0.2s ease-out",
-
+				"accordion-up": "accordion-up 0.2s ease-out",
 			},
 			colors: {
 
+				"gold-hover": "#AF793D",
+				"bluish_text": "#5A67A6",
 				"dark-blue": "#003048"
 
 			},
-			fontFamily: {
-
-
-			}
-
-		}
-
+			fontFamily: {},
+			backgroundImage: {
+				"blue-gradient": "linear-gradient(to right, #5A67A6, #AF793D)",
+			},
+		},
 	},
-  	plugins: [require("tailwindcss-animate")],
-
-}
+	plugins: [require("tailwindcss-animate")],
+};
