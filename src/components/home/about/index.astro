@@ -1,3 +1,26 @@
-<section>
+---
 
-</section>
+// IMPORTS ASTRO LAYOUTS
+import Container from "@/layouts/container/index.astro"
+
+// IMPORT ASTRO ATOMS
+import ButtonIndigoYellowGradient from "@/atoms/atoms-nandini/buttons/indigo-yellow-gradient/index.astro"
+import HeadingTwo4xlBold from "@/atoms/atoms-nandini/headings/two/4xl/bold/center/index.astro"
+
+// GET ASTRO PROPS
+const {
+
+    button_text,
+    title,
+
+} = Astro.props
+
+---
+<Container>
+    <section class="flex flex-wrap gap-10 justify-center my-10 xl:mx-40 2xl:mx-72">
+        <HeadingTwo4xlBold>{ title }</HeadingTwo4xlBold>
+        <a href="/contact/">
+            <ButtonIndigoYellowGradient>{ button_text }</ButtonIndigoYellowGradient>
+        </a>
+    </section>
+</Container>

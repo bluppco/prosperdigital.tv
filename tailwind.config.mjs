@@ -1,14 +1,17 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
 	darkMode: ["class"],
-	content: [
-		"./pages/**/*.{js,jsx}",
-		"./components/**/*.{js,jsx}",
-		"./app/**/*.{js,jsx}",
-		"./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}",
-	],
-	prefix: "",
-	theme: {
+  	content: [
+
+    	"./pages/**/*.{js,jsx}",
+    	"./components/**/*.{js,jsx}",
+    	"./app/**/*.{js,jsx}",
+    	"./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}",
+
+  	],
+  	prefix: "",
+  	theme: {
+	
 		container: {
 			center: true,
 			padding: "2rem",
@@ -32,8 +35,11 @@ module.exports = {
 				"accordion-up": "accordion-up 0.2s ease-out",
 			},
 			colors: {
+
 				"gold-hover": "#AF793D",
-				bluish_text: "#5A67A6",
+				"bluish_text": "#5A67A6",
+				"dark-blue": "#003048"
+
 			},
 			fontFamily: {},
 			backgroundImage: {

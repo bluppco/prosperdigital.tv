@@ -1,11 +1,86 @@
 ---
 
+// IMPORT ASTRO COLLECTION
+import { getCollection } from "astro:content"
+
+// IMPORT FOOTER COLLECTION
+let footer_data = await getCollection("footer")
+const footerContent = footer_data[0];
+
 // IMPORT ASTRO LAYOUTS
 import Container from "@/layouts/container/index.astro"
 
+// IMPORT ASTRO COMPONENTS
+import ContactInfo from "@/components/common/footer/contact-info/index.astro"
+import Form from "@/components/common/footer/form/index.astro"
+
+// IMPORT ASTRO ATOMS
+import HeadingFourLg from "@/atoms/atoms-shiva/headings/four/lg/bold/index.astro"
+import HeadingTwoFourXlCenter from "@/atoms/atoms-shiva/headings/two/four-xl/bold/center/index.astro"
+import ParagraphSmallCenter from "@/atoms/atoms-shiva/paragraphs/sm/center/index.astro"
+import Picture from "@/atoms/picture/internal/index.astro"
+
 ---
-<footer class="bg-black py-20">
+
+<footer class="my-14">
     <Container>
-        <p class="text-white">I am footer</p>
+        <div class="flex flex-col gap-10">
+            <HeadingTwoFourXlCenter>{ footerContent.data.title }</HeadingTwoFourXlCenter>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10 justify-between">
+                <div class="flex flex-col gap-2 w-full">
+                    <HeadingFourLg>{ footerContent.data.schema.title_one }</HeadingFourLg>
+                    <div class="flex flex-col gap-6">
+                        {
+
+                            footerContent.data.schema.contact_info.map((item) => (
+
+                                <ContactInfo
+                                    description={ item.sub_title }
+                                    title={ item.title }
+                                />
+
+                            ))
+
+                        }
+                    </div>
+                    <div class="flex gap-6 my-8 justify-center md:justify-start w-full">
+                        {
+
+                            footerContent.data.schema.social_links.map((item) => (
+
+                                <a href={ item.link }>
+                                    <div class="h-5">
+                                        <Picture
+                                            alternative_text={ item.alternative_text }
+                                            source={ item.source }
+                                        />
+                                    </div>   
+                                </a>
+
+                            ))
+
+                        }
+                    </div>
+                </div>
+                <div class="flex flex-col gap-2 w-full">
+                    <HeadingFourLg>{ footerContent.data.schema.title_two }</HeadingFourLg>
+                    <div class="min-h-[200px] w-full h-full">
+                        <iframe 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade"
+                            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d48428.46673643541!2d-74.00673!3d40.656798!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25b983e86dc97%3A0xc6cd2907256110fd!2sProsper%20Digital%20TV!5e0!3m2!1sen!2sin!4v1720420060962!5m2!1sen!2sin" 
+                            style="border:0; width:100%; height:100%"
+                        >
+                        </iframe>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-2 sm:col-span-2 lg:col-span-1">
+                    <HeadingFourLg>{ footerContent.data.schema.title_three }</HeadingFourLg>
+                    <Form/>
+                </div>
+            </div>
+            <ParagraphSmallCenter>{ footerContent.data.bottom_title }</ParagraphSmallCenter>
+        </div>
     </Container>
 </footer>
