@@ -1,0 +1,21 @@
+---
+
+// IMPORT ASTRO ATOMS
+import PictureInternalContain from "@/atoms/picture/internal/contain/index.astro"
+
+// ASTRO PROPS
+const {
+
+    alternative_text,
+    source
+
+} = Astro.props
+
+---
+
+<div class=" w-60 aspect-auto" >
+	<PictureInternalContain
+		source={ source }
+		alternative_text={ alternative_text }
+	/>
+</div>

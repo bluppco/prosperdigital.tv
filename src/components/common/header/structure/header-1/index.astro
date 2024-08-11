@@ -1,0 +1,40 @@
+---
+
+// IMPORT COLLECTIONS
+import { getCollection } from "astro:content";
+let header_list = await getCollection("header")
+header_list = header_list.sort((a, b) => a.data.order - b.data.order)
+
+// IMPORT ASTRO ATOMS
+import HeaderContainer from "@/atoms/akash/header/container/index.astro"
+import HeaderLogo from "@/atoms/akash/header/logo/index.astro"
+import WhiteText from "@/atoms/akash/header/paragraph/white/index.astro"
+
+---
+
+<div class="w-full h-56 bg-black flex justify-center items-center fixed">
+	<div class="w-[80%] flex justify-between items-center h-44">
+		<HeaderLogo 
+				source="/logo/header-logo-1.svg" 
+				alternative_text="Prosper Digital TV" 
+			/>
+		<HeaderContainer>
+			{
+			
+				header_list.map(( item, index ) => (
+
+					<div>
+						<WhiteText>
+							<a href={ item.data.href }>
+								{ item.data.title }
+							</a>
+						</WhiteText>
+					</div>
+
+				))
+			
+			}
+		</HeaderContainer>
+	</div>
+</div>
+		
