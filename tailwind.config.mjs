@@ -38,7 +38,10 @@ module.exports = {
 
 				"gold-hover": "#AF793D",
 				"bluish_text": "#5A67A6",
-				"dark-blue": "#003048"
+				"dark-blue": "#003048",
+        "primary": "#003048",
+        "secondary": "#c97e1b",
+        "accent": "#5d67a5",
 
 			},
 			fontFamily: {},

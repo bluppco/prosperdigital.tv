@@ -1,3 +1,45 @@
-<section>
+---
+//IMPORT ATOMS
+import GradientButton from "@/atoms-diksha/buttons/gradient-button/index.astro";
+import Heading2 from "@/atoms-diksha/headings/two/index.astro";
 
+//CONSTANTS
+const badge = [
+	{
+		image: "https://prosperdigital.tv/wp-content/uploads/2024/03/Clutch-Review-for-Prosper-Digital-TV_Color_v3.png",
+		alt: "Cluth Review",
+	},
+	{
+		image: "https://prosperdigital.tv/wp-content/uploads/2024/03/Free-The-Work_Prosper-Digital-TV_Gray_V3.png",
+		alt: "Free The Work",
+	},
+	{
+		image: "https://prosperdigital.tv/wp-content/uploads/2020/04/logo-certificates-07.png",
+		alt: "Best for NYC",
+	},
+	{
+		image: "https://prosperdigital.tv/wp-content/uploads/2024/03/NMSDC-Logo-MBE.png",
+		alt: "NMSDC",
+	},
+	{
+		image: "https://prosperdigital.tv/wp-content/uploads/2020/04/logo-certificates-02.png",
+		alt: "NYC Buisness Services",
+	},
+	{
+		image: "https://prosperdigital.tv/wp-content/uploads/2020/04/logo-certificates-04.png",
+		alt: "New York State of Oppurtunity",
+	},
+];
+---
+
+<section>
+	<div class="flex justify-center py-8">
+		<Heading2>Our Certifications</Heading2>
+	</div>
+	<div class="bg-[#f5f6f7] flex justify-center gap-12 py-16">
+		{badge.map((item) => <img src={item.image} alt={item.alt} class="w-24" />)}
+	</div>
+	<div class="flex justify-center bg-[#f5f6f7] pb-12">
+		<GradientButton>VIEW CAPABILITY STATEMENT</GradientButton>
+	</div>
 </section>
