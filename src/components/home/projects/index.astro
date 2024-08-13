@@ -8,47 +8,61 @@ const project = [
 		background_image: "https://prosperdigital.tv/wp-content/uploads/2024/03/Project-image-Anti-Gun-Violence-Campaign-1.jpg",
 		title: "NYC DEPARTMENT OF YOUTH",
 		description: "ANTI-GUN CAMPAIGN",
-		link: "$",
+		link: "/works/nyc-department-of-youth-community-development-dycd-anti-gun-campaign/",
 	},
 	{
 		background_image: "https://prosperdigital.tv/wp-content/uploads/2024/03/Project-image-10050-Celebration-Campaign_v5.jpg",
 		title: "COLOMBIA UNIVERSITY",
 		description: "EMBRACING OUR LEGACY",
-		link: "$",
+		link: "/works/columbia-business-schools-100-50-embracing-our-legacy-campaign/",
 	},
 	{
 		background_image: "https://prosperdigital.tv/wp-content/uploads/2024/02/Project-image-Elder-Care-Campaign.jpg",
 		title: "NYC AGING",
 		description: "ELDER CARE CAMPAIGN",
-		link: "$",
+		link: "/works/nyc-department-for-the-aging/",
 	},
 	{
 		background_image: "https://prosperdigital.tv/wp-content/uploads/2024/03/Project-image-Building-Thriving-Communit.jpg",
 		title: "PHIPPS NEIGHBORHOODS",
 		description: "BUILDING LASTING COMMUNITIES",
-		link: "$",
+		link: "/works/phipps-houses-phipps-neighbourhoods/",
 	},
 	{
 		background_image: "https://prosperdigital.tv/wp-content/uploads/2019/05/nwimg.png",
 		title: "PUBLIC HEALTH SOLUTIONS + NYC HOUSING AUTHORITY",
 		description: "SMOKE-FREE NYCHA POLICY",
-		link: "$",
+		link: "/works/public-health-solutions/",
 	},
 	{
 		background_image: "https://prosperdigital.tv/wp-content/uploads/2019/05/Project-image-Process-Agent-Campaign.jpg",
 		title: "COGENCY GLOBAL",
 		description: "PROCESS AGENT CAMPAIGN",
-		link: "$",
+		link: "/works/cogency-global/",
 	},
 	{
 		background_image: "https://prosperdigital.tv/wp-content/uploads/2024/03/Project-image-Anti-Gun-Violence-Campaign.jpg",
 		title: "KIVVIT + NY STATE OF HEALTH",
 		description: "RENEWAL & ENROLLMENT CAMPAIGN",
-		link: "$",
+		link: "/works/kivvit-and-the-new-york-state-of-health-nysh-annual-renewal-and-enrollment-campaign/",
 	},
 ];
 ---
 
 <section class="py-20">
-	{project.map((project) => <Project background_image={project.background_image} title={project.title} description={project.description} link={project.link} />)}
+	{ 
+		project.map( ( project ) => {
+
+			return ( 
+
+					<Project 
+						background_image={ project.background_image } 
+						title={ project.title } 
+						description={ project.description } 
+						link={ project.link } 
+					/>
+			)
+		})
+
+	}
 </section>

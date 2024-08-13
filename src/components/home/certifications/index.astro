@@ -1,7 +1,10 @@
 ---
+
 //IMPORT ATOMS
-import GradientButton from "@/atoms-diksha/buttons/gradient-button/index.astro";
+import ButtonIndigoYellowGradient from "@/atoms/atoms-nandini/buttons/indigo-yellow-gradient/index.astro"
 import Heading2 from "@/atoms-diksha/headings/two/index.astro";
+import Link from "@/atoms/links/index.astro"
+import PictureInternal from "@/atoms/picture/internal/index.astro"
 
 //CONSTANTS
 const badge = [
@@ -30,16 +33,65 @@ const badge = [
 		alt: "New York State of Oppurtunity",
 	},
 ];
----
 
+// HARDCODED DATA 
+const data = {
+
+	button_link:"/certifications/",
+	button_text:"VIEW CAPABILITY STATEMENT",
+	title:"Our Certifications",
+	
+}
+
+---
 <section>
 	<div class="flex justify-center py-8">
-		<Heading2>Our Certifications</Heading2>
+		<Heading2>{ data.title }</Heading2>
 	</div>
-	<div class="bg-[#f5f6f7] flex justify-center gap-12 py-16">
-		{badge.map((item) => <img src={item.image} alt={item.alt} class="w-24" />)}
+	<div class="bg-[#f5f6f7] flex flex-wrap md:flex-nowrap justify-center items-center gap-12 py-16">
+		{
+
+			badge.map( (  item , index ) =>{
+
+				if( index == 0 ){
+
+					return (
+
+							<div>
+								<div class="w-24 aspect-[3/4]">
+									<PictureInternal
+										alternative_text={ item.alt }
+										source={ item.image }
+									/>
+								</div>
+							</div>
+
+					)
+
+				} else {
+
+					return ( 
+
+						<div>
+							<div class="w-24 aspect-square">
+								<PictureInternal
+									alternative_text={ item.alt }
+									source={ item.image }
+								/>
+							</div>
+						</div>
+
+				)
+
+				}
+
+			})
+
+		}
 	</div>
 	<div class="flex justify-center bg-[#f5f6f7] pb-12">
-		<GradientButton>VIEW CAPABILITY STATEMENT</GradientButton>
+		<Link aria_label={ data.button_text } href={ data.button_link }>
+			<ButtonIndigoYellowGradient>{ data.button_text }</ButtonIndigoYellowGradient>
+		</Link>
 	</div>
 </section>
